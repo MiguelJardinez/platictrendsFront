@@ -18,7 +18,7 @@ const AbsoluteHeader = () => {
 
   return (
     <>
-      <Box className={classes.caja} boxShadow={1}>
+      <Box className={classes.caja}>
         <Container>
           <Grid container spacing={1} justify="flex-end">
             <Grid item>

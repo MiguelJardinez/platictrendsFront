@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Grid, Typography, Container } from "@material-ui/core";
 import { Phone, Place, Email } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles( (theme) => ({
 
@@ -16,7 +17,13 @@ const Footer = () => {
   const year = new Date().getFullYear();
   console.log(year)
 
-  const categorias = [ 'Inicio', 'Nosotros', 'Catalogo', 'Contacto', 'Distribucion' ]
+  const links = [
+    {nombre: 'Inicio', link: ''},
+    {nombre: 'Nosotros', link: '/nosotros'},
+    {nombre: 'Catalogo', link: '/catalogo'},
+    {nombre: 'Contacto', link: '/contacto'},
+    {nombre: 'Distribucion', link: '/distribucion'},
+  ]
   const classes = useStyles();
 
   return (
@@ -26,8 +33,8 @@ const Footer = () => {
           <Grid container alignItems="center">
             <Grid item xs={12} md={9} justify='between'>
               <Box display='flex' justifyContent='space-between' px={2}>
-                { categorias.map( categoria => (
-                    <Typography variant="body2"> <a href='#'> {categoria} </a></Typography>
+                { links.map( link => (
+                    <Link to={link.link}><Typography variant="body2"> {link.nombre} </Typography></Link>
                 ))}
               </Box>
             </Grid>
@@ -42,7 +49,7 @@ const Footer = () => {
           <Grid container>
             <Grid item xs={12}>
               <Box textAlign="center">
-                  <Typography variant="body1"> Desarrollador Miguel Jardinez {year} </Typography>
+                  <Typography variant="body1"> Desarrollador Prognosis {year} </Typography>
               </Box>
             </Grid>
           </Grid>

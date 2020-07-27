@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Typography, Box, Button, Container } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 
 //Componentes del ui
 import CardHomeCategoria from '../ui/CardHomeCategoria'
@@ -27,10 +28,12 @@ const CategoriasHome = () => {
             {categorias.map((categoria) => (
               <Grid item md={3}>
                 <Box p={1} textAlign="center">
-                  <CardHomeCategoria 
-                    categoria={categoria.categoria}
-                    imagen= {categoria.imagen}
-                  />
+                  <Link to='/catalogo'> 
+                    <CardHomeCategoria 
+                      categoria={categoria.categoria}
+                      imagen= {categoria.imagen}
+                    />
+                  </Link>
                 </Box>
               </Grid>
             ))}

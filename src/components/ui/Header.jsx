@@ -1,32 +1,54 @@
-import React from 'react'; 
-import { Link } from 'react-router-dom'; 
-import { Typography, Container, Grid, Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import { Typography, Container, Grid, Box } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
+//Imagenes
+import Logo from "../../assets/img/logo.png";
+
+//Componentes
+import AbsoluteHeader from "./AbsoluteHeader";
+import Menu from "./Menu";
+import MenuCategorias from "./MenuCategorias";
 
 const useStyles = makeStyles({
-  links:{
-    color: 'red'
+  links: {
+    color: "red",
+  },
+  logo: {
+    width: "30%",
+  },
+  logocontainer: {
+    textAlign: "center"
   }
-})
+});
 
 const Header = () => {
-
   const classes = useStyles();
 
   return (
     <>
-      <Container>
-        <ul>
-          <li> <Link to='/'><Typography className={classes.links}>Home</Typography></Link> </li>
-          <li> <Link to='/nosotros' className={classes.links}><Typography>Nosotros</Typography></Link> </li>
-          <li> <Link to='/catalogo' className={classes.links}><Typography>Catalogo</Typography></Link> </li>
-          <li> <Link to='/contacto' className={classes.links}><Typography>Contacto</Typography></Link> </li>
-          <li> <Link to='/distribucion' className={classes.links}><Typography>Distribucion</Typography></Link> </li>
-        </ul>
-      </Container>
+      <AbsoluteHeader />
+      <Box py={1} boxShadow={1}>
+        <Container>
+          <Grid container spacing={1} alignItems="center">
+            <Grid item md={3} className={classes.logocontainer}>
+              <img src={Logo} className={classes.logo} alt="" />
+            </Grid>
+            <Grid container item md={9}>
+               <Grid item xs={12}>
+                  <Box py={1}>
+                    <Menu />
+                  </Box>
+               </Grid>
+              <Grid item xs={12}>
+                <MenuCategorias />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
