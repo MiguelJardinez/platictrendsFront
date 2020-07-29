@@ -1,10 +1,12 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography, Container, Box } from '@material-ui/core';
 
 const Catalogo = () => {
   return (
     <>
-      <Typography variant="h1" color="initial">Somo Catalogo</Typography> 
+      <Container>
+        <Typography variant="h1" color="initial">Somo Catalogo</Typography> 
+      </Container>
     </>
   )
 }

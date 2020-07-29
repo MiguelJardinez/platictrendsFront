@@ -1,18 +1,17 @@
-import React from "react";
-import { Typography, Container, Grid, Box } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import React from 'react';
+import { Box, Container, Grid } from '@material-ui/core'; 
+import { makeStyles } from '@material-ui/core/styles';
 
 //Imagenes
-import Logo from "../../assets/img/logo.png";
+import Logo from "../../../assets/img/logo.png"; 
 
 //Componentes
-import AbsoluteHeader from "./AbsoluteHeader";
 import Menu from "./Menu";
 import MenuCategorias from "./MenuCategorias";
 
 const useStyles = makeStyles({
-  links: {
-    color: "red",
+  headerMain: {
+    backgroundColor: '#fff'
   },
   logo: {
     width: "30%",
@@ -20,15 +19,14 @@ const useStyles = makeStyles({
   logocontainer: {
     textAlign: "center"
   }
-});
+})
 
-const Header = () => {
+const HeaderMain = () => {
+
   const classes = useStyles();
 
   return (
-    <>
-      <AbsoluteHeader />
-      <Box py={1} boxShadow={1}>
+    <Box py={2} boxShadow={3} className={classes.headerMain}>
         <Container>
           <Grid container spacing={1} alignItems="center">
             <Grid item md={3} className={classes.logocontainer}>
@@ -47,8 +45,7 @@ const Header = () => {
           </Grid>
         </Container>
       </Box>
-    </>
-  );
-};
+  )
+}
 
-export default Header;
+export default HeaderMain

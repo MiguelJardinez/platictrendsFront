@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   links: {
-    color: "red",
+    color: "#005FA8",
   },
   navegacion: {
     display: "flex",
     justifyContent: "space-between",
+    padding: '0'
   },
 });
 
@@ -25,13 +26,15 @@ const Menu = () => {
   ];
 
   return (
-    <ul className={classes.navegacion}>
-      {links.map((link) => (
-        <Link to={link.link}>
-          <Typography variant="body1" className={classes.links}> {link.nombre} </Typography>
-        </Link>
-      ))}
-    </ul>
+    <Box py={1} px={8}>
+        <ul className={classes.navegacion}>
+          {links.map((link) => (
+            <Link to={link.link}>
+              <Typography variant="body1" className={classes.links}> {link.nombre} </Typography>
+            </Link>
+          ))}
+        </ul>
+    </Box>
   );
 };
 

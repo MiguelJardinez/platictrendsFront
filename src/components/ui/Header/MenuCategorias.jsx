@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
   caja: {
     backgroundColor: '#005FA8',
-    borderRadius: '10px'
+    borderRadius: '5px'
   },
   menu: {
     display: 'flex',
-    justifyContent: 'space-between', link: '/catalogo'
+    padding: '0px',
+    justifyContent: 'space-between'
   }
 });
 
@@ -28,7 +29,7 @@ const MenuCategorias = () => {
 
   return (
     <>
-      <Box className={classes.caja} py={2}>
+      <Box className={classes.caja} py={2} px={5}>
         <ul className={classes.menu}>
           { categorias.map( categoria => (
             <Link to={categoria.link}>
