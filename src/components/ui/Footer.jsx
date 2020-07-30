@@ -8,6 +8,9 @@ const useStyles = makeStyles( (theme) => ({
 
   footerColor: {
     backgroundColor: '#005FA8',
+  },
+  footerTitle: {
+    color: '#fff'
   }
 
 }));
@@ -48,8 +51,8 @@ const Footer = () => {
           </Grid>
           <Grid container>
             <Grid item xs={12}>
-              <Box textAlign="center">
-                  <Typography variant="body1"> Desarrollador Prognosis {year} </Typography>
+              <Box textAlign="center" mt={2}>
+                  <Typography variant="body1" className={classes.footerTitle}> Desarrollador Prognosis {year} </Typography>
               </Box>
             </Grid>
           </Grid>

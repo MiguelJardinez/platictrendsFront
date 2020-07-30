@@ -1,11 +1,33 @@
 import React from "react";
 import { Grid, Typography, Box, Button, Container } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { Link } from 'react-router-dom';
 
 //Componentes del ui
-import CardHomeCategoria from '../ui/CardHomeCategoria'
+import CardHomeCategoria from '../ui/CardHomeCategoria';
+
+const useStyles = makeStyles({
+  titulo: {
+    color: '#005FA8',
+    fontweight: '900',
+    fontSize: '2.2em'
+  },
+  boton: {
+    background: '#005FA8',
+    width: "150px",
+    transition: "all 300ms ease",
+    
+    '&:hover': {
+      background: '#005FA8',
+      width: "170px",
+    }
+  }
+});
+
 
 const CategoriasHome = () => {
+
+  const classes = useStyles();
   
   const categorias = [
     { id: 1, categoria: "Organizacion", imagen: "https://desarrollo.prognosis.mx/plastictrends/img/productos/categorias/1.png" },
@@ -22,7 +44,7 @@ const CategoriasHome = () => {
       <Container>
         <Box mt={1} p={1}>
           <Box textAlign="center"  mb={2}>
-            <Typography variant="h3">Categoría de productos</Typography>
+            <Typography variant="h5" className={classes.titulo}>Categoría de productos</Typography>
           </Box>
           <Grid container spacing={2} justify="center">
             {categorias.map((categoria) => (
@@ -39,8 +61,10 @@ const CategoriasHome = () => {
             ))}
           </Grid>
           <Box textAlign="center" mt={3}>
-            <Button variant="contained" color="primary">
-              Ver mas
+            <Button variant="contained" className={classes.boton}>
+              <Link to='/catalogo'>
+                Ver todos
+              </Link>
             </Button>
           </Box>
         </Box>

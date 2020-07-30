@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography, Box, Button, Container } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 import Logo from "../../assets/img/logo.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -61,7 +62,9 @@ const AboutHome = () => {
                 </Typography>
                 <Box mt={1} textAlign="right">
                   <Button className={classes.boton}>
-                    Saber más
+                    <Link to='/nosotros'>
+                      Saber más
+                    </Link>
                   </Button>
                 </Box>
               </Box>
