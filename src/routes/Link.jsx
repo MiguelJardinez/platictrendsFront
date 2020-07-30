@@ -7,6 +7,7 @@ import Nosotros from "../Views/Nosotros";
 import Contacto from "../Views/Contacto";
 import Catalogo from "../Views/Catalogo";
 import Distribucion from "../Views/Distribucion";
+import Producto from "../Views/Producto";
 import Error404 from '../Views/Error404';
 
 const Link = () => {
@@ -18,6 +19,7 @@ const Link = () => {
       <Route path="/catalogo" component={Catalogo} />
       <Route path="/distribucion" component={Distribucion} />
       <Route path="/contacto" component={Contacto} />
+      <Route path="/producto" component={Producto} />
       <Route component={Error404} />
     </Switch>  
     </>

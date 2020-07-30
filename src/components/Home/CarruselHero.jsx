@@ -30,21 +30,23 @@ const Carrusel = () => {
 
   return (
     <>
-      <Carousel
-        responsive={responsive}
-        infinite={true}
-        transitionDuration={500}
-        draggable={true}
-        showDots={true}
-      >
-      
-      { imagenesHero.map( ({ id, imagen }) => (
-        <Box className={classes.hero}>
-          <img className={classes.imagenHero} src={imagen} alt=""/>
-        </Box>
-      ))}
+      <Box>
+        <Carousel
+          responsive={responsive}
+          infinite={true}
+          transitionDuration={500}
+          draggable={true}
+          showDots={true}
+        >
+        
+        { imagenesHero.map( ({ id, imagen }) => (
+          <Box className={classes.hero}>
+            <img className={classes.imagenHero} src={imagen} alt=""/>
+          </Box>
+        ))}
 
-      </Carousel>
+        </Carousel>
+      </Box>
     </>
   )
 }

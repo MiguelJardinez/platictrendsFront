@@ -61,11 +61,11 @@ const AboutHome = () => {
                   mejor calidad a precios justos.
                 </Typography>
                 <Box mt={1} textAlign="right">
-                  <Button className={classes.boton}>
-                    <Link to='/nosotros'>
+                  <Link to='/nosotros'>
+                    <Button className={classes.boton}>
                       Saber más
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                 </Box>
               </Box>
             </Grid>
